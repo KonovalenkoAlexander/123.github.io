@@ -1,0 +1,28 @@
+const firstRow = 'Slow and steady wins the race';
+const secondRow = 'You can say that again';
+
+function countLetters(letter, row) {
+    let count = 0;
+    for (let i = 0; i < row.length; i++) {
+        if (row.charAt(i).toLowerCase() === letter.toLowerCase()) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function getRow(firstRow, secondRow) {
+    const letter = prompt("Введіть літеру для підрахунку:");
+    const firstCount = countLetters(letter, firstRow);
+    const secondCount = countLetters(letter, secondRow);
+
+    if (firstCount > secondCount) {
+        return firstRow;
+    } else if (secondCount > firstCount) {
+        return secondRow;
+    } else {
+        return 'Кількість однакова в обох рядках';
+    }
+}
+
+alert(getRow(firstRow, secondRow));
